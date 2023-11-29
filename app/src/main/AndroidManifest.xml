@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Blackjack"
+        android:name="com.bignerdranch.android.blackjack.App"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"

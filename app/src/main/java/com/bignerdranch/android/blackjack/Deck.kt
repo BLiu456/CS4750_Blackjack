@@ -5,12 +5,12 @@ import com.bignerdranch.android.blackjack.Suites
 import com.bignerdranch.android.blackjack.Ranks
 
 
-class Deck(val cx:Context) {
+class Deck() {
     private var cardList = mutableMapOf<Int, Card>() //Key is id of card, and the value is the card itself
     private var allowDraw = mutableListOf<Int>() //What is currently in deck (what is allowed to be drawn)
     private var discardPile = mutableListOf<Int>() //Cards not allowed to be drawn
     private var cardBack = R.drawable.card_back_red //Refers to the id of the img
-    private var ctx = cx.applicationContext
+    private var ctx = App.getAppContext()
     init {
         var id: Int = 0
         for (s in Suites.values()) {
