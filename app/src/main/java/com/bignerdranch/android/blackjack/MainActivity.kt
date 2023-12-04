@@ -11,21 +11,38 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.bignerdranch.android.blackjack.ui.theme.BlackjackTheme
+import android.content.Intent
+import android.view.View
+import android.app.Dialog
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            BlackjackTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+        setContentView(R.layout.main_menu)
+    }
+    private fun showRulesPopup() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.how_to_play)
+        dialog.show()
+    }
+    // Called when the "Play" button is clicked
+    fun onPlayButtonClick(view: View) {
+        // Start the Play activity or perform the Play action
+    }
+
+    // Called when the "Scoreboard" button is clicked
+    fun onScoreboardButtonClick(view: View) {
+        // Start the Scoreboard activity
+    }
+
+    // Called when the "Rules" button is clicked
+    fun onRulesButtonClick(view: View) {
+        showRulesPopup()
+    }
+    // Close the pop-up
+    fun onClosePopupButtonClick(view: View) {
+        val dialog = view.parent as Dialog
+        dialog.dismiss()
     }
 }
 
