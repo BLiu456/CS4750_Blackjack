@@ -11,15 +11,25 @@ import android.view.View
 import android.app.Dialog
 
 class MainActivity : AppCompatActivity() {
+    private var highScore = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_menu)
     }
+
+    private fun showScoreboard() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.scoreboard_layout)
+        dialog.show()
+    }
+
     private fun showRulesPopup() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.how_to_play)
         dialog.show()
     }
+    // Called when the "Scoreboard" button is clicked
+
     // Called when the "Play" button is clicked
     fun onPlayButtonClick(view: View) {
         // Start the Play activity or perform the Play action
@@ -27,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     // Called when the "Scoreboard" button is clicked
     fun onScoreboardButtonClick(view: View) {
-        // Start the Scoreboard activity
+        showScoreboard()
     }
 
     // Called when the "Rules" button is clicked

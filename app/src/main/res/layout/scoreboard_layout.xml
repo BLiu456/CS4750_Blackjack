@@ -8,16 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
-            android:gravity="center"
-            android:text="@string/app_name"
-            android:textAppearance="@android:style/TextAppearance.Material.Display2" />
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,28 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/player_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:background="@color/black"
-                android:cropToPadding="true"
-                android:scaleType="centerInside" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/username" />
-
-            <ImageButton
-                android:id="@+id/camera_icon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/camera_icon" />
-        </LinearLayout>
+            android:orientation="vertical"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
