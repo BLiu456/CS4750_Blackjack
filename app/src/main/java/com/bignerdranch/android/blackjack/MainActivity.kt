@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun showBetting(){
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.betting_layout)
+        dialog.show()
+    }
+
     private fun showRulesPopup() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.how_to_play)
@@ -33,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     // Called when the "Play" button is clicked
     fun onPlayButtonClick(view: View) {
         // Start the Play activity or perform the Play action
+        showBetting()
     }
 
     // Called when the "Scoreboard" button is clicked
