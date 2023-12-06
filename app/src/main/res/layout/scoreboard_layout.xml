@@ -31,14 +31,15 @@
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text="High Score:"
+                android:text="@string/score_text"
                 android:textAppearance="@android:style/TextAppearance.Material.Large" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="@+id/highscore"
+                android:id="@+id/highscore"
+                android:text="0"
                 android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
         </LinearLayout>
