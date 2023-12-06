@@ -50,7 +50,7 @@
             android:id="@+id/btnDecrement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
+            android:text="Min"
             android:textSize="20sp" />
 
         <!-- Bet Amount Box -->
@@ -68,7 +68,7 @@
             android:id="@+id/btnIncrement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
+            android:text="Max"
             android:textSize="20sp" />
 
         <!-- Bet Button -->
