@@ -8,4 +8,8 @@ class BettingActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.betting_layout)
     }
+    
+    private fun startGame(){
+            
+    }
 }
