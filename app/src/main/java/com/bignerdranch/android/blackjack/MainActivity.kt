@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bignerdranch.android.blackjack.ui.theme.BlackjackTheme
 import android.view.View
 import android.app.Dialog
+import android.content.Intent
+import android.os.PersistableBundle
 
 class MainActivity : AppCompatActivity() {
     private var highScore = 0
@@ -19,6 +21,10 @@ class MainActivity : AppCompatActivity() {
         val onPlayButtonClick = findViewById<View>(R.id.btnPlay)
         onPlayButtonClick.setOnClickListener {view: View ->
             onPlayButtonClick(view)
+        }
+
+        if (savedInstanceState != null){
+            highScore = savedInstanceState.getInt("score")
         }
     }
 
@@ -57,4 +63,16 @@ class MainActivity : AppCompatActivity() {
     fun onRulesButtonClick(view: View) {
         showRulesPopup()
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt("score", highScore)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        savedInstanceState.getInt("score")
+    }
+
 }
