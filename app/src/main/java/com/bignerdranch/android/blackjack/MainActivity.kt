@@ -15,6 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_menu)
+
+        val onPlayButtonClick = findViewById<View>(R.id.btnPlay)
+        onPlayButtonClick.setOnClickListener {view: View ->
+            onPlayButtonClick(view)
+        }
     }
 
     private fun showScoreboard() {
@@ -38,8 +43,9 @@ class MainActivity : AppCompatActivity() {
 
     // Called when the "Play" button is clicked
     fun onPlayButtonClick(view: View) {
-        // Start the Play activity or perform the Play action
-        showBetting()
+        val intent = Intent(this, BettingActivity::class.java)
+        startActivity(intent)
+        setContentView(R.layout.betting_layout)
     }
 
     // Called when the "Scoreboard" button is clicked
