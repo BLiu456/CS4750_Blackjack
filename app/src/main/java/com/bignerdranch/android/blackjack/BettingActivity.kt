@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Button
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
 class BettingActivity: AppCompatActivity() {
@@ -45,9 +46,12 @@ class BettingActivity: AppCompatActivity() {
         if (betInput != null && betInput >= playerBalance * 0.1 && betInput <= playerBalance) {
             currentBet = betInput
 
-            // Updates balance
             playerBalance -= currentBet
             updateBalanceText()
+
+            val intent = Intent(this, GameActivity::class.java)
+            intent.putExtra("CURRENT_BET", currentBet)
+            startActivity(intent)
         }
     }
 }
