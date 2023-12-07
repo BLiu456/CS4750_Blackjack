@@ -33,13 +33,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun showBetting(){
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.betting_layout)
-        dialog.show()
-
-    }
-
     private fun showRulesPopup() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.how_to_play)
