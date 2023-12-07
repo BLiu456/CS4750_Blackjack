@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:hint="Enter Bet Amount"
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:textSize="18sp" />
 
         <!-- Increment Button -->

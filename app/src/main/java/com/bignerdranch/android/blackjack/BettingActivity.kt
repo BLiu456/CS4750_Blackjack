@@ -8,8 +8,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
 class BettingActivity: AppCompatActivity() {
-    private var playerBalance: Double = 100.0
-    private var currentBet: Double = 0.0
+    private var playerBalance: Int = 100
+    private var currentBet: Int = 0
 
     private lateinit var balanceTextView: TextView
     private lateinit var betEditText: EditText
@@ -26,7 +26,8 @@ class BettingActivity: AppCompatActivity() {
         val maxBetButton: Button = findViewById(R.id.btnIncrement)
         val betButton: Button = findViewById(R.id.btnBet)
 
-        minBetButton.setOnClickListener { setBetAmount(playerBalance * 0.1) }
+        var min = playerBalance * 0.1
+        minBetButton.setOnClickListener { setBetAmount(min.toInt()) }
         maxBetButton.setOnClickListener { setBetAmount(playerBalance) }
         betButton.setOnClickListener { lockInBet() }
     }
@@ -35,13 +36,13 @@ class BettingActivity: AppCompatActivity() {
         balanceTextView.text = "Balance: $playerBalance"
     }
 
-    private fun setBetAmount(amount: Double) {
+    private fun setBetAmount(amount: Int) {
         currentBet = amount
         betEditText.setText(amount.toString())
     }
 
     private fun lockInBet() {
-        val betInput = betEditText.text.toString().toDoubleOrNull()
+        val betInput = betEditText.text.toString().toIntOrNull()
 
         if (betInput != null && betInput >= playerBalance * 0.1 && betInput <= playerBalance) {
             currentBet = betInput
