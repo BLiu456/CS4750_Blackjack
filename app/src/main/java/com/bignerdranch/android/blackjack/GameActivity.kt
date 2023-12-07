@@ -37,12 +37,20 @@ class GameActivity : AppCompatActivity() {
         val standButton: Button = findViewById(R.id.btnStand)
         val doubleDownButton: Button = findViewById(R.id.btnDoubleDown)
 
-        hitButton.setOnClickListener {}
-        standButton.setOnClickListener {}
-        doubleDownButton.setOnClickListener {}
+        hitButton.setOnClickListener {playerHit()}
+        standButton.setOnClickListener {playerStand()}
+        doubleDownButton.setOnClickListener {playerDoubleDown()}
     }
     private fun updateGameStatus() {
 
     }
+    private fun playerHit(){
 
+    }
+    private fun playerStand(){
+
+    }
+    private fun playerDoubleDown(){
+        
+    }
 }
