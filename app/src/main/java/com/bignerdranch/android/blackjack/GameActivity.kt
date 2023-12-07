@@ -1,33 +1,56 @@
 package com.bignerdranch.android.blackjack
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.random.Random
+import android.widget.LinearLayout
+import android.widget.Button
 
-/*  TODO
-    Bet function
-    Create function that takes in players and dealers card to display to layout
-    A function to flip dealer's card
-    Dealer AI
-    Calculate results
-    Update balance*/
+class GameActivity : AppCompatActivity() {
 
-class GameActivity: AppCompatActivity(){
-    private var cardDeck:Deck = Deck()
-    private var playerCards = mutableListOf<Card>()
-    private var dealerCards = mutableListOf<Card>()
+    private lateinit var playerCardsLayout: LinearLayout
+    private lateinit var dealerCardsLayout: LinearLayout
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    private var playerCards: MutableList<Int> = mutableListOf()
+    private var dealerCards: MutableList<Int> = mutableListOf()
+
+    private var currentBet: Double = 0.0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_layout)
+
+        // Retrieve bet amount
+        currentBet = intent.getDoubleExtra("CURRENT_BET", 0.0)
+
+        playerCardsLayout = findViewById(R.id.playerHandLayout)
+        dealerCardsLayout = findViewById(R.id.dealerHandLayout)
+
+        // Deal two cards to the player and the dealer
+
+
+        updateGameStatus()
+
+        val hitButton: Button = findViewById(R.id.btnHit)
+        val standButton: Button = findViewById(R.id.btnStand)
+        val doubleDownButton: Button = findViewById(R.id.btnDoubleDown)
+
+        hitButton.setOnClickListener {playerHit()}
+        standButton.setOnClickListener {playerStand()}
+        doubleDownButton.setOnClickListener {playerDoubleDown()}
     }
+    private fun updateGameStatus() {
 
-    private fun dealCards(){
-        //Draw 2 player cards
-        playerCards.add(cardDeck.drawCard())
-        playerCards.add(cardDeck.drawCard())
+    }
+    private fun playerHit(){
 
-        //Draw 2 dealer cards
-        dealerCards.add(cardDeck.drawCard())
-        dealerCards.add(cardDeck.drawCard())
+    }
+    private fun playerStand(){
+
+    }
+    private fun playerDoubleDown(){
+        
     }
 }

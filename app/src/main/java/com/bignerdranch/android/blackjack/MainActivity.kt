@@ -27,17 +27,17 @@ class MainActivity : AppCompatActivity() {
             highScore = savedInstanceState.getInt("score")
         }
     }
-
+    // Called when the "Scoreboard" button is clicked
     private fun showScoreboard() {
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.scoreboard_layout)
-        dialog.show()
+        val intent = Intent(this, Scoreboard::class.java)
+        startActivity(intent)
     }
 
     private fun showBetting(){
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.betting_layout)
         dialog.show()
+
     }
 
     private fun showRulesPopup() {
@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         dialog.setContentView(R.layout.how_to_play)
         dialog.show()
     }
-    // Called when the "Scoreboard" button is clicked
 
     // Called when the "Play" button is clicked
     fun onPlayButtonClick(view: View) {
