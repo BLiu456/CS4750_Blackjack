@@ -40,7 +40,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:id="@+id/highscore"
-                android:text="0"
+
                 android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
         </LinearLayout>

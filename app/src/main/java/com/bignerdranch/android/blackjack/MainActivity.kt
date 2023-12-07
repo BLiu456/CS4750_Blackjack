@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.betting_layout)
         dialog.show()
+
     }
 
     private fun showRulesPopup() {

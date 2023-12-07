@@ -1,28 +1,19 @@
 package com.bignerdranch.android.blackjack
 
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+
 class Scoreboard: AppCompatActivity() {
-    private var highscore = 0;
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.scoreboard_layout)
 
-
-        if (savedInstanceState != null){
-            highscore = savedInstanceState.getInt("score")
-        }
-    }
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-
-        outState.putInt("score", highscore)
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        savedInstanceState.getInt("score")
+        var scoreSetter: TextView = findViewById(R.id.highscore)
+        var savedScore = getSharedPreferences("highScoreSave", 0);
+        var highScore = savedScore.getInt("highScore", 69420)
+        scoreSetter.setText(Integer.toString(highScore))
     }
 }
