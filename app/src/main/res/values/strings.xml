@@ -2,4 +2,11 @@
     <string name="app_name">Blackjack</string>
     <string name="username">Player</string>
     <string name="score_text">High Score:</string>
+    <string name="rules">The Objective of the game is to have a higher net value than the dealer,
+                      while still being at or under 21. \nAt the start of a round, both the player
+                      and the dealer are dealt two cards, and the player can either choose to
+                      hit, which is drawing another card, or stand. If a player goes over 21, they
+                      automatically bust, which means they lose. \nAll number cards are worth
+                      their face value, and all face cards are worth 10. Ace cards can either be
+                      counter as 1 or 11.</string>
 </resources>
