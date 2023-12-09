@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
 
     // Called when the "Play" button is clicked
     fun onPlayButtonClick(view: View) {
+        //Change this to the game activity once the game can loop with the bet ****
         val intent = Intent(this, BettingActivity::class.java)
         startActivity(intent)
-        setContentView(R.layout.betting_layout)
     }
 
     // Called when the "Scoreboard" button is clicked

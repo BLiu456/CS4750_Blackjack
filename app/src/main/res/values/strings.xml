@@ -9,4 +9,7 @@
                       automatically bust, which means they lose. \nAll number cards are worth
                       their face value, and all face cards are worth 10. Ace cards can either be
                       counter as 1 or 11.</string>
+    <string name="win_toast">Player Wins!</string>
+    <string name="lose_toast">Player Loses!</string>
+    <string name="tie_toast">Tie!</string>
 </resources>
