@@ -15,6 +15,8 @@ class BettingActivity: AppCompatActivity() {
     private lateinit var betEditText: EditText
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
+        playerBalance = intent.getIntExtra("CURRENT_AMOUNT", 100)
+
         setContentView(R.layout.betting_layout)
 
         balanceTextView = findViewById(R.id.textCurrentAmount)
@@ -47,12 +49,10 @@ class BettingActivity: AppCompatActivity() {
         if (betInput != null && betInput >= playerBalance * 0.1 && betInput <= playerBalance) {
             currentBet = betInput
 
-            playerBalance -= currentBet
-            updateBalanceText()
-
-            val intent = Intent(this, GameActivity::class.java)
-            intent.putExtra("CURRENT_BET", currentBet)
-            startActivity(intent)
+            val intent = Intent()
+            intent.putExtra("BET_AMOUNT", currentBet)
+            setResult(RESULT_OK, intent)
+            finish()
         }
     }
 }

@@ -11,6 +11,7 @@ import android.view.View
 import android.app.Dialog
 import android.content.Intent
 import android.os.PersistableBundle
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
     private var highScore = 0
@@ -27,9 +28,26 @@ class MainActivity : AppCompatActivity() {
             highScore = savedInstanceState.getInt("score")
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 100 && resultCode == RESULT_OK) {
+            if (data != null) {
+                val scoreData = data.extras
+                if (scoreData != null) {
+                    val newScore = scoreData.getInt("MAX_SCORE")
+
+                    if (newScore > highScore) {
+                        highScore = newScore
+                    }
+                }
+            }
+        }
+    }
     // Called when the "Scoreboard" button is clicked
     private fun showScoreboard() {
         val intent = Intent(this, Scoreboard::class.java)
+        intent.putExtra("SCORE", highScore)
         startActivity(intent)
     }
 
@@ -42,8 +60,8 @@ class MainActivity : AppCompatActivity() {
     // Called when the "Play" button is clicked
     fun onPlayButtonClick(view: View) {
         //Change this to the game activity once the game can loop with the bet ****
-        val intent = Intent(this, BettingActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, GameActivity::class.java)
+        startActivityForResult(intent, 100)
     }
 
     // Called when the "Scoreboard" button is clicked
